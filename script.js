@@ -1,5 +1,9 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+var totalUpperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+var totalLowerCase = "abcdefghijklmnopqrstuvwxyz"
+var totalNumbers = "0123456789"
+var totalSymbols = "!@#$%^&*()-_"
 
 // Write password to the #password input
 function writePassword() {
@@ -27,6 +31,29 @@ function generatePassword(){
     if (!yesUpperCase && !yesLowerCase && !numbers && !symbols){
       alert ("Choose at least one option")
       return "Choose at least one option"
+    }
+    else {
+      var userChoice = []
+      var password = ""
+      if (yesUpperCase){
+        userChoice += totalUpperCase
+      }
+      if (yesLowerCase){
+        userChoice += totalLowerCase
+      }
+      if (numbers){
+        userChoice += totalNumbers
+      }
+      if (symbols){
+        userChoice += totalSymbols
+      }
+      console.log(userChoice)
+      for (var i=1; i<=passwordLength; i++){
+        var index = Math.floor(Math.random() * userChoice.length)
+        password += userChoice[index]
+      }
+      console.log(password)
+      return password
     }
   }
 
