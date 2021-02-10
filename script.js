@@ -19,4 +19,15 @@ function generatePassword(){
    alert ("Enter valid length between 8 and 21") 
    return "Enter valid length between 8 and 21"
   }
+  else {
+    var yesUpperCase = confirm("Do you like Uppercase letters in the password ?")
+    var yesLowerCase = confirm("Do you like Lowercase letters in the password ?")
+    var numbers = confirm("Do you like numbers in the password ?")
+    var symbols = confirm("Do you like symbols in the password ?")
+    if (!yesUpperCase && !yesLowerCase && !numbers && !symbols){
+      alert ("Choose at least one option")
+      return "Choose at least one option"
+    }
+  }
+
 }
